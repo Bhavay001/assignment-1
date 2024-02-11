@@ -1,38 +1,135 @@
+:root{
+  --section-overlay: rgba(0,0,0,0.7);
+  --background-overlay:rgba(0,0,0,0.2);
+}
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  /* text-align: center; */
+}
+.overlay{
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-overlay);
+}
+.container{
+  max-width: 800px;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+} 
+
+/* TOP */
+
+.section{
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section__inputs, .section__temperature{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--section-overlay);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section__inputs>input{
+  border: 0.8px solid white;
+  border-radius: 0.4rem;
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem;
+  font-size: 20px;
+  font-weight: 200;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section__inputs>input{
+  outline: none;
+}
+.section__inputs>button{
+  padding: 10px 50px;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: white;
+}
+
+.section__inputs>button:hover{
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.icon{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.icon>h3{
+  font-size: 15px;
+  font-weight: 200;
+  text-transform: capitalize;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.temperature>h1{
+  font-size: 60px;
+}
+.section__history {
+  background-color: var(--section-overlay);
+  padding: 1rem;
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+}
+
+.section__history h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.section__history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section__history li {
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.section__history li:hover {
+  color: lightgray;
+}
+
+.section__history button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.section__history button:hover {
+  background-color: lightgray;
 }
